@@ -1,21 +1,13 @@
-<header>
-    <div class="container flex flex-wrap items-center justify-between py-5">
+<header class="py-2 border-b-2 border-blue-800 border-opacity-25">
+    <div class="container flex flex-wrap md:gap-0 gap-4 items-center md:justify-between justify-center py-5">
         <a
             class="font-FiraSansCondensed text-3xl"
             href="{{route('index.index')}}">
             Чаевариум
         </a>
-        <div class="flex items-center gap-9">
-            <nav>
-                <ul class="flex items-center gap-5">
-                    <li><a href="#" class="link">Каталог</a></li>
-                    <li><a href="#" class="link">О нас</a></li>
-                </ul>
-            </nav>
-            <div class="flex items-center gap-7">
-                <a href="#" class="button">Войти</a>
-                <a href="#" class="button-fill">Зарегистрироваться</a>
-            </div>
+        <div class="flex items-center gap-7 md:flex-row flex-col">
+            <a href="{{route('auth.loginPage')}}" class="button">Войти</a>
+            <a href="{{route('auth.registrationPage')}}" class="button-fill">Зарегистрироваться</a>
         </div>
     </div>
 </header>

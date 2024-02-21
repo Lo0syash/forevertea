@@ -16,6 +16,9 @@
         &:after{
             transition: all .5s ease-in-out;
         }
-        @apply py-2 relative after:absolute after:w-0 hover:after:w-full after:h-[2px] after:bg-blue-600 after:bottom-0 after:left-0;
+        @apply font-medium text-lg py-2 relative after:absolute after:w-0 hover:after:w-full after:h-[2px] after:bg-blue-600 after:bottom-0 after:left-0;
+    }
+    .input{
+        @apply w-80 px-5 border-2 border-gray-700 border-opacity-25 focus:border-opacity-100 focus:placeholder-transparent rounded py-4 outline-none bg-transparent transition;
     }
 }
