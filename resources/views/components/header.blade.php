@@ -5,9 +5,17 @@
             href="{{route('index.index')}}">
             Чаевариум
         </a>
-        <div class="flex items-center gap-7 md:flex-row flex-col">
-            <a href="{{route('auth.loginPage')}}" class="button">Войти</a>
-            <a href="{{route('auth.registrationPage')}}" class="button-fill">Зарегистрироваться</a>
-        </div>
+        @auth()
+            <form action="{{route('auth.logout')}}" method="post">
+                @csrf
+                <button type="submit" class="button-fill">Выйти</button>
+            </form>
+        @endauth
+        @guest()
+            <div class="flex items-center gap-7 md:flex-row flex-col">
+                <a href="{{route('auth.loginPage')}}" class="button">Войти</a>
+                <a href="{{route('auth.registrationPage')}}" class="button-fill">Зарегистрироваться</a>
+            </div>
+        @endguest
     </div>
 </header>
