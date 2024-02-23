@@ -12,9 +12,10 @@
                         <input
                             type="text"
                             name="phone_number"
-                            placeholder="Номер телефона"
-                            class="input {{ $errors->get('phone_number') ? 'border-2 border-red-500' : '' }}"
-                            value="{{@old('phone_number')}}"
+                            placeholder="+7(___)___-__-__"
+                            id="login-phone"
+                            class="input login-phone {{ $errors->get('phone_number') ? 'border-2 border-red-500' : '' }}"
+{{--                            value="{{@old('phone_number')}}"--}}
                         >
                         <label for="name" class="{{ $errors->has('phone_number') ? 'block' : 'hidden' }}">
                             @error('phone_number') <p class="text-red-500">{{$message}}</p> @enderror
@@ -40,4 +41,12 @@
             </div>
         </div>
     </div>
+    <script>
+        import inputmask from 'inputmask'
+        const inputElement = document.querySelector('.login-phone');
+
+        const mask = inputmask(inputElement, {
+            mask: '+{7}(000)000-00-00',
+        });
+    </script>
 @endsection
