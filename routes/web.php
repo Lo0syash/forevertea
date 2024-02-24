@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\IndexController;
 use \App\Http\Controllers\AuthController;
+use \App\Http\Controllers\CategoryController;
 
 
 /*
@@ -27,4 +28,11 @@ Route::controller(AuthController::class)->group(function () {
    Route::get('/registration', 'registrationPage')->name('auth.registrationPage');
    Route::post('/registration', 'registration')->name('auth.registration');
    Route::post('/logout', 'logout')->name('auth.logout');
+});
+
+Route::controller(CategoryController::class)->prefix('category')->middleware(\App\Http\Middleware\AdminMiddleware::class)->group(function (){
+    Route::get('/create', 'create')->name('category.create');
+    Route::post('/', 'store')->name('category.store');
+
+    Route::post('/{category}', 'destroy')->name('category.destroy');
 });

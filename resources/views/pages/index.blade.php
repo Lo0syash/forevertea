@@ -8,9 +8,9 @@
                     <h1 class="text-3xl font-bold font-FiraSansCondensed">Чаевариум</h1>
                     <p class="text-2xl font-light">
                         Уютный и атмосферный чайный уголок, где
-                        можно расслабиться и насладит-80 чашечкой84ароматного чая.
+                        можно расслабиться и насладиться чашечкой ароматного чая.
                     </p>
-                </div class="w-52 h-44 object-cover">
+                </div >
                 <img src="/public/logotype.png" alt="logotype with banner" class="max-w-xs">
             </div>
             <div class="flex flex-col">

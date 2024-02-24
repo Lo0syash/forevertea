@@ -4,7 +4,10 @@
     <div>
         <div class="container">
             <div>
-                <h1 class="text-3xl my-5 font-FiraSansCondensed">Каталоги</h1>
+                <div class="flex items-center justify-between">
+                    <h1 class="text-3xl my-5 font-FiraSansCondensed">Категории</h1>
+                    <a href="{{route('category.create')}}" class="button-fill">Добавить категорию</a>
+                </div>
                 <div class="flex flex-col gap-4">
                     @if($categories->count() > 0)
                         @foreach($categories as $category)
@@ -12,7 +15,7 @@
                                 <p class="text-white">{{$category->name}}</p>
                                 <div class="flex gap-4">
                                     <a href="">✏️</a>
-                                    <form action="" class="cursor-pointer">
+                                    <form action="{{route('destroy', $category->id)}}" class="cursor-pointer">
                                         @method('DELETE')
                                         ❌
                                     </form>
