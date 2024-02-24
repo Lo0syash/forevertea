@@ -12,5 +12,4 @@ export default {
             'FiraSansCondensed': ["'Fira Sans Condensed'", 'sans-serif'],
         }
     },
-    plugins: [],
 }

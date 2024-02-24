@@ -6,6 +6,11 @@
             Чаевариум
         </a>
         @auth()
+            @auth()
+                @if(auth()->user()->role_id === 2)
+                    <a href="{{route('index.admin')}}" class="button">Админ панель</a>
+                @endif
+            @endauth
             <form action="{{route('auth.logout')}}" method="post">
                 @csrf
                 <button type="submit" class="button-fill">Выйти</button>

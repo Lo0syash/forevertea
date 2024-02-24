@@ -36,6 +36,7 @@
                             type="text"
                             name="phone_number"
                             placeholder="Номер телефона"
+                            maxlength="12"
                             class="input {{ $errors->get('phone_number') ? 'border-2 border-red-500' : '' }}"
                             value="{{@old('phone_number')}}"
                         >

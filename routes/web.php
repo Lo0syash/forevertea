@@ -18,6 +18,7 @@ use \App\Http\Controllers\AuthController;
 
 Route::controller(IndexController::class)->group(function (){
     Route::get('/', 'index')->name('index.index');
+    Route::get('/admin', 'admin')->name('index.admin')->middleware(['admin']);
 });
 
 Route::controller(AuthController::class)->group(function () {
