@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\IndexController;
 use \App\Http\Controllers\AuthController;
 use \App\Http\Controllers\CategoryController;
-
+use \App\Http\Controllers\ProductConroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +33,15 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(CategoryController::class)->prefix('category')->middleware(\App\Http\Middleware\AdminMiddleware::class)->group(function (){
     Route::get('/create', 'create')->name('category.create');
     Route::post('/', 'store')->name('category.store');
+    Route::delete('/{category}', 'destroy')->name('category.destroy');
+    Route::get('/{category}/edit', 'edit')->name('category.edit');
+    Route::post('/{category}', 'update')->name('category.update');
+});
 
-    Route::post('/{category}', 'destroy')->name('category.destroy');
+Route::controller(ProductConroller::class)->prefix('product')->middleware(\App\Http\Middleware\AdminMiddleware::class)->group(function (){
+    Route::get('/create', 'create')->name('product.create');
+    Route::post('/', 'store')->name('product.store');
+    Route::get('/{product}/edit', 'edit')->name('product.edit');
+    Route::delete('/', 'destroy')->name('product.destroy');
+    Route::post('/{product}', 'update')->name('product.update');
 });

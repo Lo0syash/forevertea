@@ -10,7 +10,9 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('pages.index');
+        $categories = Category::all();
+        $products = Products::all();
+        return view('pages.index', compact('categories', 'products'));
     }
     public function admin()
     {
