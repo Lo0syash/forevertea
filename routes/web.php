@@ -42,6 +42,6 @@ Route::controller(ProductConroller::class)->prefix('product')->middleware(\App\H
     Route::get('/create', 'create')->name('product.create');
     Route::post('/', 'store')->name('product.store');
     Route::get('/{product}/edit', 'edit')->name('product.edit');
-    Route::delete('/', 'destroy')->name('product.destroy');
+    Route::delete('/{product}', 'destroy')->name('product.destroy');
     Route::post('/{product}', 'update')->name('product.update');
 });

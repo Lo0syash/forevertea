@@ -31,7 +31,7 @@
                     <h1 class="text-3xl my-5 font-FiraSansCondensed">Продукты</h1>
                     <a href="{{route('product.create')}}" class="button-fill">Добавить продукт</a>
                 </div>
-                <div class="flex flex-col gap-4">
+                <div class="flex flex-wrap gap-4">
                     @if($products->count() > 0)
                         @foreach($products as $product)
                             <div class="w-64 h-80 border-black border-opacity-20 rounded border-2 flex flex-col px-2 gap-4 py-3">
