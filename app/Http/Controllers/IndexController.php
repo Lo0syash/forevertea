@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
-        $products = Products::all();
+        $category_id = $request->all();
+        if (isset($category_id) && isset($category_id['category'])) {
+            $category_id = $request->all()['category'];
+            $products = Products::query()->where('categories_id', '=', $category_id)->get();
+        } else {
+            $products = Products::all();
+        }
         return view('pages.index', compact('categories', 'products'));
     }
     public function admin()

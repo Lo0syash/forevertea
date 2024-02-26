@@ -26,6 +26,7 @@ class StoreRequest extends FormRequest
             'description'=>'required|string|max:2000',
             'price'=>'required|numeric|max:9999999999',
             'categories_id'=>'required|integer|exists:categories,id',
+            'path'=>'required|image|max:5120'
         ];
     }
 }

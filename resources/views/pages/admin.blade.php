@@ -34,8 +34,8 @@
                 <div class="flex flex-wrap gap-4">
                     @if($products->count() > 0)
                         @foreach($products as $product)
-                            <div class="w-64 h-80 border-black border-opacity-20 rounded border-2 flex flex-col px-2 gap-4 py-3">
-                                <img src="#" alt="Изображение" class="w-52 h-44 object-cover">
+                            <div class="w-64 py-4 border-black border-opacity-20 rounded border-2 flex flex-col px-2 gap-4">
+                                <img src="{{$product->getImageUrl()}}" name="path" alt="Изображение" class="w-52 h-44 object-cover">
                                 <h3 class="text-xl">{{$product->name}}</h3>
                                 <p class="text-[1rem]">{{$product->price}} $</p>
                                 <form action="#" method="post">

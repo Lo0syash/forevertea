@@ -5,8 +5,9 @@
         <div class="container">
             <div class="flex flex-col justify-center items-center">
                 <h1 class="text-4xl my-5 font-FiraSansCondensed">Добавление продукта</h1>
-                <form action="{{route('product.store')}}" class="flex flex-col gap-7" method="post">
+                <form action="{{route('product.store')}}" class="flex flex-col gap-7" method="post" enctype="multipart/form-data">
                     @csrf
+                    <input type="file" name="path" class="input">
                     <input
                         type="text"
                         name="name"
